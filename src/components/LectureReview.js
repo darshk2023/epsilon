@@ -44,7 +44,6 @@ function LectureReview() {
 
   // For display in the UI (you may update this as needed)
   const localVideoUrl = '/quicksort.mov';
-  // const localVideoUrl = 'https://www.youtube.com/watch?v=30DBwAsJgM8';
   const handleStartReview = async () => {
     setLoading(true);
     try {
