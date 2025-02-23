@@ -1,0 +1,196 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f8f9fa;
+}
+
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.course-card, .add-course-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.course-card:hover {
+  background: #f0f0f0;
+}
+
+.add-course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-course-card input {
+  margin: 4px 0;
+  padding: 8px;
+}
+
+.add-course-card button {
+  padding: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.course-page {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.back-button {
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.tabs {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  background: #e2e2e2;
+  border-radius: 4px;
+}
+
+.tabs button.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.tab-content {
+  margin-top: 16px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.review-history,
+.conversation-history,
+.quiz-history {
+  margin-top: 16px;
+  background: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.page-transition {
+  @apply transition-opacity duration-300;
+}
+
+.page-enter {
+  @apply opacity-0;
+}
+
+.page-enter-active {
+  @apply opacity-100;
+}
+
+@layer components {
+  .home-container {
+    @apply mx-auto max-w-3xl p-6;
+  }
+  .courses-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+  }
+  .course-card {
+    @apply bg-white p-4 rounded-md shadow cursor-pointer hover:bg-gray-100;
+  }
+  .add-course-card {
+    @apply bg-white p-4 rounded-md shadow flex flex-col;
+  }
+  .add-course-card input {
+    @apply border p-2 mb-2 rounded;
+  }
+  .add-course-card button {
+    @apply bg-blue-500 text-white p-2 rounded hover:bg-blue-600;
+  }
+
+  .course-page {
+    @apply mx-auto max-w-3xl bg-white p-4 rounded-md;
+  }
+  .back-button {
+    @apply mb-4 text-blue-500 hover:underline;
+  }
+  .tabs {
+    @apply mt-4 flex gap-2;
+  }
+  .tabs button {
+    @apply px-4 py-2 border border-gray-300 rounded cursor-pointer;
+  }
+  .tabs button.active {
+    @apply bg-blue-500 text-white;
+  }
+  .tab-content {
+    @apply mt-4;
+  }
+
+  .review-history,
+  .conversation-history,
+  .quiz-history {
+    @apply mt-4 bg-gray-100 p-4 rounded;
+  }
+} */
