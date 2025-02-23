@@ -1,4 +1,4 @@
-# Epsilon AI - Intelligent Course Assistant
+# Epsilon: On-Demand Teaching Assistants
 
 Epsilon AI is a React-based web application that serves as an intelligent course assistant, providing students with personalized learning experiences through three main features: Lecture Review, On-Demand Office Hours, and Concept Quizzes.
 
