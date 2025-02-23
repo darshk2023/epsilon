@@ -1,48 +1,219 @@
+/* --------------------- Partner Styles --------------------- */
+
+/* OfficeHours.css */
+.conversation-history,
+.quiz-history {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.conversation,
+.quiz {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.conversation h5,
+.quiz h5 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.conversation p,
+.quiz p {
+  margin: 5px 0 0;
+  font-size: 1em;
+  color: #333;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.transcript-summary {
+  color: #333;
+}
+
+.transcript-summary pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.summary-text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Merge .timestamp from OfficeHours.css and ConceptQuizzes.css */
+.timestamp {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 5px;
+  margin-bottom: 0.5em;
+}
+
+/* ConceptQuizzes.css */
+.planned-quiz {
+  border: 2px solid #007bff;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  background-color: rgba(0,123,255,0.1);
+  font-size: 0.9em;
+  border-radius: 8px;
+}
+
+.quiz-title {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.small-box {
+  max-width: 400px;
+}
+
+/* --------------------- Main Styles (Your Styles) --------------------- */
+
+/* Global Styles */
 body {
   font-family: sans-serif;
   margin: 20px;
   background-color: #f8f9fa;
 }
 
+/* Container for the Home Page */
 .home-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
+.home-container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid for courses and the add-course card */
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 16px;
 }
 
-.course-card, .add-course-card {
+/* Course Card */
+.course-card {
   background: #fff;
   padding: 16px;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* Center the text horizontally and vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  /* text-align: center; */
+  min-height: 80px;
+  line-height: 5px;
 }
 
 .course-card:hover {
   background: #f0f0f0;
 }
 
+.course-card h3 {
+  margin: 0 0 8px 0;
+}
+
+/* "Add Course" Card with dotted border and plus sign */
 .add-course-card {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px dotted #CED4DA;
+  cursor: pointer;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  text-align: center;
 }
 
-.add-course-card input {
-  margin: 4px 0;
-  padding: 8px;
+.add-course-card:hover {
+  background: #fff;
 }
 
-.add-course-card button {
+.plus-sign {
+  font-size: 2rem;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+/* Popup (Modal) Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Make sure it's above everything else */
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90%;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.modal-content input {
+  display: block;
+  width: 94%;
+  margin-bottom: 12px;
   padding: 8px;
-  margin-top: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
 }
 
+.modal-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Course Page (unchanged) */
 .course-page {
   max-width: 800px;
   margin: 0 auto;
@@ -51,42 +222,59 @@ body {
   border-radius: 8px;
 }
 
-.back-button {
-  margin-bottom: 16px;
-  cursor: pointer;
-}
-
-.tabs {
-  margin-top: 16px;
+.course-info {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 6px;
 }
 
-.tabs button {
-  padding: 8px 16px;
+.back-button {
+  background-color: #fff;
+  border: 1px solid #fff;
   cursor: pointer;
-  border: none;
-  background: #e2e2e2;
-  border-radius: 4px;
 }
 
-.tabs button.active {
-  background: #007bff;
-  color: #fff;
-}
-
-.tab-content {
+/* Tabs container */
+.tabs {
+  display: flex;
   margin-top: 16px;
 }
 
-input {
-  padding: 8px;
-  margin-right: 8px;
+/* Default (inactive) tab styling */
+.tabs button {
+  flex: 1;
+  background-color: #f5f6f8; /* light gray */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s ease;
+  /* border-radius: 8px; */
 }
 
-button {
-  padding: 8px 16px;
-  cursor: pointer;
+#lecture-tab {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#quizzes-tab {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Hover effect for inactive tabs */
+.tabs button:hover {
+  background-color: #ebecf0;
+}
+
+/* Active tab styling */
+.tabs button.active {
+  background-color: #fff; /* white background for active tab */
+  color: #111;           /* darker text */
+  border-bottom: 2px solid #0a74dc; /* bold blue bottom border */
 }
 
 .review-history,
@@ -98,99 +286,133 @@ button {
   border-radius: 4px;
 }
 
-/* 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
- 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.75rem;
-  }
+/* Lecture Review Container */
+.lecture-review-container {
+  margin-top: 16px;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Row containing the input and the button */
+.review-input-row,
+.office-hours-input-row,
+.concept-quizzes-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-.page-transition {
-  @apply transition-opacity duration-300;
+/* The text input */
+.review-input,
+.office-hours-input,
+.concept-quizzes-input {
+  flex: 1; /* Make the input take available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
-.page-enter {
-  @apply opacity-0;
+.review-button,
+.office-hours-button,
+.concept-quizzes-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Add space between icon and text */
+  padding: 0 16px;
+  background-color: #007bff; /* Match the tabs blue color */
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #fff; /* White text for contrast */
 }
 
-.page-enter-active {
-  @apply opacity-100;
+.review-button:hover,
+.office-hours-button:hover,
+.concept-quizzes-button:hover {
+  background-color: #0056b3; /* Darker blue on hover, matching tabs */
 }
 
-@layer components {
-  .home-container {
-    @apply mx-auto max-w-3xl p-6;
-  }
-  .courses-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
-  }
-  .course-card {
-    @apply bg-white p-4 rounded-md shadow cursor-pointer hover:bg-gray-100;
-  }
-  .add-course-card {
-    @apply bg-white p-4 rounded-md shadow flex flex-col;
-  }
-  .add-course-card input {
-    @apply border p-2 mb-2 rounded;
-  }
-  .add-course-card button {
-    @apply bg-blue-500 text-white p-2 rounded hover:bg-blue-600;
-  }
+/* Review History section */
+.review-history-container,
+.office-hours-history-container,
+.concept-quizzes-history-container {
+  margin-top: 32px;
+}
 
-  .course-page {
-    @apply mx-auto max-w-3xl bg-white p-4 rounded-md;
-  }
-  .back-button {
-    @apply mb-4 text-blue-500 hover:underline;
-  }
-  .tabs {
-    @apply mt-4 flex gap-2;
-  }
-  .tabs button {
-    @apply px-4 py-2 border border-gray-300 rounded cursor-pointer;
-  }
-  .tabs button.active {
-    @apply bg-blue-500 text-white;
-  }
-  .tab-content {
-    @apply mt-4;
-  }
+.review-history-title,
+.office-hours-history-title,
+.concept-quizzes-history-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
 
-  .review-history,
-  .conversation-history,
-  .quiz-history {
-    @apply mt-4 bg-gray-100 p-4 rounded;
-  }
-} */
+/* Box with "No review history yet" */
+.review-history-box,
+.office-hours-history-box,
+.concept-quizzes-history-box {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-height: 120px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+}
+
+/* Video grid styles for review history */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* Set a fixed width for the video card */
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.video-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.video-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;  /* Make it bold */
+  color: #333;
+}
+
+.download-link {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.download-link:hover {
+  background-color: #0056b3;
+}
